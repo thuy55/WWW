@@ -1,0 +1,144 @@
+﻿<!doctype  html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Check out</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}" />
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}" />
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.css}" />
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/nivo-slider.css}" />
+
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+
+    <!-- Modernizer js -->
+    <script th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Main Wrapper Start Here -->
+    <div class="wrapper">
+
+        <!-- Main Header Area Start Here -->
+        <header th:replace="~{shop::header}"></header>
+        <!-- Main Header Area End Here -->
+
+        <!-- checkout-area start -->
+        <div class="checkout-area pb-100 pt-15 pb-sm-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6">
+                        <div class="checkbox-form mb-sm-40">
+                            <h3>Billing Details</h3>
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list mb-sm-30">
+                                        <label>Full Name <span class="required"></span></label>
+                                        <input type="text" disabled="true" placeholder="" th:value="${customer.getUserName()}">
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="checkout-form-list">
+                                        <label>Address <span class="required"></span></label>
+                                        <input type="text" disabled="true" placeholder="Street address" th:value="${customer.getAddress()}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list mb-30">
+                                        <label>Email Address <span class="required"></span></label>
+                                        <input type="email" disabled="true" placeholder="" th:value="${customer.getEmail()}">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="checkout-form-list mb-30">
+                                        <label>Phone  <span class="required"></span></label>
+                                        <input type="text" disabled="true" placeholder="Postcode / Zip" th:value="${customer.getPhone()}">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6">
+                        <div class="your-order">
+                            <h3>Your order</h3>
+                            <div class="your-order-table table-responsive">
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th class="product-name">Product</th>
+                                        <th class="product-total">Total</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <th:block th:each="item : ${order.getOrderDetails()}">
+                                    <tr class="cart_item">
+                                        <td class="product-name">
+                                            <span class="product-name" th:text="${item.product.name}"></span> x <span product-quantity th:text="${item.quality}"></span>
+                                        </td>
+                                        <td class="product-total">
+                                            <span class="amount" th:text="${item.product.price}*${item.quality}"></span>
+                                        </td>
+                                    </tr>
+                                    </th:block>
+
+
+                                    <tr class="cart-subtotal">
+                                        <th>Cart Subtotal</th>
+                                        <td><span class="amount" th:text="${order.total}"></span></td>
+                                    </tr>
+                                    <tr class="order-total">
+                                        <th>Order Total</th>
+                                        <td><span class=" total amount" th:text="${order.total}"></span>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                    <tfoot>
+                                    <tr>
+                                        <td></td>
+                                        <td>
+                                            <div class="wc-proceed-to-checkout">
+                                                <a th:href="@{/cart/payment(idOrder=${order.id})}">Payment</a>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    </tfoot>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- checkout-area end -->
+
+        <!-- Footer Area Start Here -->
+        <footer th:replace="~{shop::footer}"></footer>
+        <!-- Footer Area End Here -->
+
+    </div>
+    <!-- Main Wrapper End Here -->
+
+
+</body>
+
+</html>

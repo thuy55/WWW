@@ -1,0 +1,137 @@
+﻿<!doctype  html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}" />
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}" />
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.css}" />
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/nivo-slider.css}" />
+
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+
+    <!-- Modernizer js -->
+    <script th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Main Wrapper Start Here -->
+    <div class="wrapper">
+
+        <!-- Main Header Area Start Here -->
+        <header th:replace="~{shop::header}"></header>
+        <!-- Main Header Area End Here -->
+
+        <!-- LogIn Page Start -->
+        <div class="log-in ptb-100 ptb-sm-60">
+            <div class="container">
+                <div class="row">
+                    <!-- New Customer Start -->
+                    <div class="col-md-6">
+                        <div class="well mb-sm-30">
+                            <div class="new-customer">
+                                <h3 class="custom-title">new customer</h3>
+                                <p class="mtb-10"><strong>Register</strong></p>
+                                <p>By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made</p>
+                                <a class="customer-btn" th:href="@{/register}">continue</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- New Customer End -->
+                    <!-- Returning Customer Start -->
+                    <div class="col-md-6">
+                        <div class="well">
+                            <div class="return-customer">
+                                <h3 class="mb-10 custom-title">returnng customer</h3>
+                                <p class="mb-10"><strong>I am a returning customer</strong></p>
+                                <p th:text="${error}" style="color: red"></p>
+                                <form method="POST" th:action="@{/login}">
+                                    <div class="form-group">
+                                        <label>Phone</label>
+                                        <input type="text" name="username" placeholder="Enter your phone number" id="input-email" class="form-control">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Password</label>
+                                        <input type="password" name="password" placeholder="Password" id="input-password" class="form-control">
+                                    </div>
+                                    <span th:text="${message}" style="color:red;"></span>
+                                    <p class="lost-password"><a th:href="@{/forgotPassword}">Forgot password?</a></p>
+                                    <input type="submit" value="Login" class="return-customer-btn">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Returning Customer End -->
+                </div>
+                <!-- Row End -->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- LogIn Page End -->
+
+        <!-- Footer Area Start Here -->
+        <footer th:replace="~{shop::footer}"></footer>
+        <!-- Footer Area End Here -->
+
+    </div>
+    <!-- Main Wrapper End Here -->
+
+    <!-- jquery 3.2.1 -->
+    <script src="js\vendor\jquery-3.2.1.min.js"></script>
+    <!-- Countdown js -->
+    <script src="js\jquery.countdown.min.js"></script>
+    <!-- Mobile menu js -->
+    <script src="js\jquery.meanmenu.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="js\jquery.scrollUp.js"></script>
+    <!-- Nivo slider js -->
+    <script src="js\jquery.nivo.slider.js"></script>
+    <!-- Fancybox js -->
+    <script src="js\jquery.fancybox.min.js"></script>
+    <!-- Jquery nice select js -->
+    <script src="js\jquery.nice-select.min.js"></script>
+    <!-- Jquery ui price slider js -->
+    <script src="js\jquery-ui.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="js\owl.carousel.min.js"></script>
+    <!-- Bootstrap popper js -->
+    <script src="js\popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js\bootstrap.min.js"></script>
+    <!-- Plugin js -->
+    <script src="js\plugins.js"></script>
+    <!-- Main activaion js -->
+    <script src="js\main.js"></script>
+    <script th:inline="javascript">
+        var message =[[${success}]];
+        function sleep (time) {
+          return new Promise((resolve) => setTimeout(resolve, time));
+        }
+        sleep(400).then(() => {
+            if(message==null||message==""){
+            }else alert("Sign Up Success!!");
+        });
+
+    </script>
+</body>
+
+</html>

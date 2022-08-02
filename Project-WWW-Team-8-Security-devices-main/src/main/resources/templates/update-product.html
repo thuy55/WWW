@@ -1,0 +1,213 @@
+<!doctype  html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Product Details || Truemart Responsive Html5 Ecommerce Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}" />
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}" />
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.css}" />
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/nivo-slider.css}" />
+
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+    <style>
+    .avatar-upload {
+        position: relative;
+        max-width: 205px;
+        margin: 50px auto;
+    }
+    .avatar-edit {
+        position: absolute;
+        right: 12px;
+        z-index: 1;
+        top: 10px;
+    }
+    .avatar-edit input {
+        display: none;
+    }
+    .avatar-edit label{
+        display: inline-block;
+        width: 34px;
+        height: 34px;
+        margin-bottom: 0;
+        border-radius: 10%;
+        background: #FFFFFF;
+        border: 1px solid transparent;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.12);
+        cursor: pointer;
+        font-weight: normal;
+        transition: all .2s ease-in-out;
+    }
+    .avatar-edit label:hover {
+                    background: #f1f1f1;
+                    border-color: #d6d6d6;
+    }
+    .avatar-edit label:after {
+        content: "\f040";
+        font-family: 'FontAwesome';
+        color: #757575;
+        position: absolute;
+        top: 10px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        margin: auto;
+    }
+
+    .avatar-preview {
+        width: 192px;
+        height: 192px;
+        position: relative;
+        border-radius: 10%;
+        border: 6px solid #F8F8F8;
+        box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.1);
+    }
+    .avatar-preview div {
+        width: 100%;
+        height: 100%;
+        border-radius: 10%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+  </style>
+
+    <!-- Modernizer js -->
+    <script th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+    <script th:src="@{/js/jquery.min.js}"></script>
+
+</head>
+
+<body>
+<!--[if lte IE 9]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+<![endif]-->
+
+<!-- Main Wrapper Start Here -->
+<div class="wrapper">
+
+    <header th:replace="~{shop::header}"></header>
+    <!-- Product Thumbnail Start -->
+    <div class="main-product-thumbnail ptb-100 ptb-sm-60">
+        <div class="container">
+            <div class="thumb-bg">
+                <div class="row mt-3">
+                    <form class="col-12" th:action="@{/product/update}" th:object="${product}" method="post" enctype="multipart/form-data">
+                        <input type="hidden" th:field="*{id}">
+                        <div class="form-group">
+                            <div class="avatar-upload">
+                                <div class="avatar-edit">
+                                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg" name="file">
+                                    <label for="imageUpload"></label>
+                                </div>
+                                <div class="avatar-preview">
+                                    <div id="imagePreview" style="background-image: url(/img/icon/bg-l-sale.png);">
+                                    </div>
+                                    <h6 style="text-align:center;">Choose the product image</h6>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="input-1">Product Name:</label>
+                            <input type="text" required  class="form-control" id="input-1" th:field="*{name}" placeholder="Input the product name">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-2">Brand:</label>
+                            <input class="form-control" required id="input-2" th:field="*{brand}" placeholder="Input the product brand">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-4">Type:</label>
+                            <input type="text" required class="form-control" th:field="*{type}"  id="input-4" placeholder="Input the product type">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-5">Detail:</label>
+                            <input type="text" required class="form-control" th:field="*{detail}"  id="input-5" placeholder="Input the product detail">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-6">Price:</label>
+                            <input type="number" required class="form-control" th:field="*{price}"  id="input-6" placeholder="Input the price of product ">
+                        </div>
+                        <div class="form-group">
+                            <label for="input-7">Quality:</label>
+                            <input type="number" required class="form-control" th:field="*{quality}"  id="input-7" placeholder="Input quality of product">
+                        </div>
+                        <div class="form-group">
+                            <p th:text="${error}" style="color:red;font-style: oblique;"></p>
+                        </div>
+                        <div class="form-footer">
+                            <button type="button" class="btn btn-danger" th:onclick="'window.location.href = \'' + @{/product/admin} + '\''"><i class="fa fa-close"></i>Cancel</button>
+                            <button type="submit" class="btn btn-success"><i class="fa fa-check-square-o"></i>Update</button>
+                        </div>
+                    </form>
+                </div>
+                <!-- Row End -->
+            </div>
+        </div>
+        <!-- Container End -->
+    </div>
+    <!-- Product Thumbnail End -->
+    <!-- Footer Area Start Here -->
+    <footer th:replace="~{shop::footer}"></footer>
+    <!-- Footer Area End Here -->
+</div>
+<!-- Main Wrapper End Here -->
+
+<!-- jquery 3.2.1 -->
+<script src="/js/vendor/jquery-3.2.1.min.js"></script>
+<!-- Countdown js -->
+<script src="/js/jquery.countdown.min.js"></script>
+<!-- Mobile menu js -->
+<script src="/js/jquery.meanmenu.min.js"></script>
+<!-- ScrollUp js -->
+<script src="/js/jquery.scrollUp.js"></script>
+<!-- Nivo slider js -->
+<script src="/js/jquery.nivo.slider.js"></script>
+<!-- Fancybox js -->
+<script src="/js/jquery.fancybox.min.js"></script>
+<!-- Jquery nice select js -->
+<script src="/js/jquery.nice-select.min.js"></script>
+<!-- Jquery ui price slider js -->
+<script src="/js/jquery-ui.min.js"></script>
+<!-- Owl carousel -->
+<script src="/js/owl.carousel.min.js"></script>
+<!-- Bootstrap popper js -->
+<script src="/js/popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="/js/bootstrap.min.js"></script>
+<!-- Plugin js -->
+<script src="/js/plugins.js"></script>
+<!-- Main activaion js -->
+<script src="/js/main.js"></script>
+<script th:inline="javascript">
+        function readURL(input) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    $('#imagePreview').css('background-image', 'url('+e.target.result +')');
+                    $('#imagePreview').hide();
+                    $('#imagePreview').fadeIn(650);
+                }
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+        $("#imageUpload").change(function() {
+            readURL(this);
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+<!doctype  html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Shopping history</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}" />
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}" />
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.css}" />
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/nivo-slider.css}" />
+
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+
+    <!-- Modernizer js -->
+    <script th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+<body>
+    <!-- Main Wrapper Start Here -->
+    <div class="wrapper">
+
+        <!-- Main Header Area Start Here -->
+        <header th:replace="~{shop::header}"></header>
+        <!-- Main Header Area End Here -->
+
+        <!-- Body history start Here -->
+        <div class="cart-main-area ptb-100 ptb-sm-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <h3>SHOPPING HISTORY</h3>
+                        <br><br>
+
+                            <!-- Table Content Start -->
+                        <div class="table-content table-responsive mb-45">
+                            <th:block th:each="order : ${listOrders}">
+                                <div style="margin-bottom:20px;background-color: #fcf8e3;padding:10px 10px 10px 10px;">
+                                    <table>
+                                        <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">Image</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        <th:block th:each="item : ${order.orderDetails}">
+                                            <tr>
+                                                <td class="product-thumbnail">
+                                                    <a href="#"><img class="primary-img" th:src="${item.product.image}" alt="single-product"></a>
+                                                </td>
+                                                <td class="product-name"><span th:text="${item.product.name}"></span></td>
+                                                <td class="product-price"><span class="amount" th:text="${item.product.price}"></span></td>
+                                                <td class="product-quantity"><span th:text="${item.quality}"></span></td>
+                                                <td class="product-subtotal" th:text="${item.quality}*${item.product.price}"></td>
+                                            </tr>
+                                        </th:block>
+
+                                        </tbody>
+                                    </table>
+                                    <br>
+                                    <div class="row">
+                                        <!-- Cart Button Start -->
+                                        <div class="col-md-8 col-sm-12">
+                                            <div class="buttons-cart">
+                                            </div>
+                                        </div>
+                                        <!-- Cart Button Start -->
+                                        <!-- Cart Totals Start -->
+                                        <div class="col-md-4 col-sm-12">
+                                            <div class="cart_totals float-md-right text-md-right">
+                                                <h2>Order Totals</h2>
+                                                <br>
+                                                <table class="float-md-right">
+                                                    <tbody>
+                                                    <tr>
+                                                        <th style="background-color: #fcf8e3">Date</th>
+                                                        <td style="background-color: #fcf8e3">
+                                                            <strong><span class="amount" th:text="${order.date}"></span></strong>
+                                                        </td>
+                                                    </tr>
+                                                    <tr class="order-total">
+                                                        <th style="background-color: #fcf8e3">Total</th>
+                                                        <td style="background-color: #fcf8e3">
+                                                            <strong><span class="amount" th:text="${order.total}"></span></strong>
+                                                        </td>
+                                                    </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                        <!-- Cart Totals End -->
+                                    </div>
+                                </div>
+                            </th:block>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- Row End -->
+            </div>
+        </div>
+        <!-- Body history End Here -->
+
+
+        <!-- Footer Area Start Here -->
+        <footer th:replace="~{shop::footer}"></footer>
+        <!-- Footer Area End Here -->
+    </div>
+    <!-- Main Wrapper End Here -->
+</body>
+</html>

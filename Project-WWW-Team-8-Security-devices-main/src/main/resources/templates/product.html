@@ -1,0 +1,397 @@
+﻿<!doctype  html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Product Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}" />
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}" />
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}" />
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.css}" />
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/nivo-slider.css}" />
+
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+
+    <!-- Modernizer js -->
+    <script th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+		<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+	<![endif]-->
+
+    <!-- Main Wrapper Start Here -->
+    <div class="wrapper">
+
+        <<!-- Main Header Area Start Here -->
+        <header th:replace="~{shop::header}"></header>
+        <!-- Main Header Area End Here -->
+        <!-- Categorie Menu & Slider Area Start Here -->
+        <div class="main-page-banner home-3">
+            <div class="container">
+                <div class="row">
+                    <!-- Vertical Menu Start Here -->
+                    <div class="col-xl-3 col-lg-4 d-none d-lg-block">
+                        <div class="vertical-menu mb-all-30">
+                            <nav>
+                                <ul class="vertical-menu-list">
+                                    <li class=""><a href="shop.html"><span><img src="img\vertical-menu\1.png"
+                                                                                alt="menu-icon"></span>Automotive &
+                                        Motorcycle<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+
+                                            <ul class="ht-dropdown mega-child">
+                                                <li><a href="shop.html">Office chair <i class="fa fa-angle-right"></i></a>
+                                                     <!-- category submenu end-->
+                                                    <ul class="ht-dropdown mega-child">
+                                                        <li><a href="shop.html">Bibendum Cursus</a></li>
+                                                        <li><a href="shop.html">Dignissim Turpis</a></li>
+                                                        <li><a href="shop.html">Dining room</a></li>
+                                                        <li><a href="shop.html">Dining room</a></li>
+                                                    </ul>
+                                                    <!-- category submenu end-->
+                                                </li>
+                                                <li><a href="shop.html">Purus Lacus <i class="fa fa-angle-right"></i></a>
+                                                     <!-- category submenu end-->
+                                                    <ul class="ht-dropdown mega-child">
+                                                        <li><a href="shop.html">Magna Pellentesq</a></li>
+                                                        <li><a href="shop.html">Molestie Tortor</a></li>
+                                                        <li><a href="shop.html">Vehicula Element</a></li>
+                                                        <li><a href="shop.html">Sagittis Blandit</a></li>
+                                                    </ul>
+                                                    <!-- category submenu end-->
+                                                </li>
+                                                <li><a href="shop.html">Sagittis Eget</a></li>
+                                                <li><a href="shop.html">Sagittis Eget</a></li>
+                                            </ul>
+                                            <!-- category submenu end-->
+                                        </li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\3.png" alt="menu-icon"></span>Sports & Outdoors<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <!-- Vertical Mega-Menu Start -->
+                                            <ul class="ht-dropdown megamenu first-megamenu">
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Cameras</li>
+                                                        <li><a href="shop.html">Cords and Cables</a></li>
+                                                        <li><a href="shop.html">gps accessories</a></li>
+                                                        <li><a href="shop.html">Microphones</a></li>
+                                                        <li><a href="shop.html">Wireless Transmitters</a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="menu-tile">GamePad</li>
+                                                        <li><a href="shop.html">real game hd</a></li>
+                                                        <li><a href="shop.html">fighting game</a></li>
+                                                        <li><a href="shop.html">racing pad</a></li>
+                                                        <li><a href="shop.html">puzzle pad</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Digital Cameras</li>
+                                                        <li><a href="shop.html">Camera one</a></li>
+                                                        <li><a href="shop.html">Camera two</a></li>
+                                                        <li><a href="shop.html">Camera three</a></li>
+                                                        <li><a href="shop.html">Camera four</a></li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="menu-tile">Virtual Reality</li>
+                                                        <li><a href="shop.html">Reality one</a></li>
+                                                        <li><a href="shop.html">Reality two</a></li>
+                                                        <li><a href="shop.html">Reality three</a></li>
+                                                        <li><a href="shop.html">Reality four</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                                <!-- Single Megamenu Image Start -->
+                                                <li class="megamenu-img">
+                                                    <a href="shop.html"><img src="img\vertical-menu\sub-img1.jpg" alt="menu-image"></a>
+                                                    <a href="shop.html"><img src="img\vertical-menu\sub-img2.jpg" alt="menu-image"></a>
+                                                    <a href="shop.html"><img src="img\vertical-menu\sub-img3.jpg" alt="menu-image"></a>
+                                                </li>
+                                                <!-- Single Megamenu Image End -->
+                                            </ul>
+                                            <!-- Vertical Mega-Menu End -->
+                                        </li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\6.png" alt="menu-icon"></span>Fashion<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <!-- Vertical Mega-Menu Start -->
+                                            <ul class="ht-dropdown megamenu megamenu-two">
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Men’s Fashion</li>
+                                                        <li><a href="shop.html">Blazers</a></li>
+                                                        <li><a href="shop.html">Boots</a></li>
+                                                        <li><a href="shop.html">pants</a></li>
+                                                        <li><a href="shop.html">Tops & Tees</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Women’s Fashion</li>
+                                                        <li><a href="shop.html">Bags</a></li>
+                                                        <li><a href="shop.html">Bottoms</a></li>
+                                                        <li><a href="shop.html">Shirts</a></li>
+                                                        <li><a href="shop.html">Tailored</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                            </ul>
+                                            <!-- Vertical Mega-Menu End -->
+                                        </li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\7.png" alt="menu-icon"></span>Home & Kitchen<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <!-- Vertical Mega-Menu Start -->
+                                            <ul class="ht-dropdown megamenu megamenu-two">
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Large Appliances</li>
+                                                        <li><a href="shop.html">Armchairs</a></li>
+                                                        <li><a href="shop.html">Bunk Bed</a></li>
+                                                        <li><a href="shop.html">Mattress</a></li>
+                                                        <li><a href="shop.html">Sideboard</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Small Appliances</li>
+                                                        <li><a href="shop.html">Bootees Bags</a></li>
+                                                        <li><a href="shop.html">Jackets</a></li>
+                                                        <li><a href="shop.html">Shelf</a></li>
+                                                        <li><a href="shop.html">Shoes</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                            </ul>
+                                            <!-- Vertical Mega-Menu End -->
+                                        </li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\4.png" alt="menu-icon"></span>Phones & Tablets<i class="fa fa-angle-right" aria-hidden="true"></i>
+                                        </a>
+                                            <!-- Vertical Mega-Menu Start -->
+                                            <ul class="ht-dropdown megamenu megamenu-two">
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Tablet</li>
+                                                        <li><a href="shop.html">tablet one</a></li>
+                                                        <li><a href="shop.html">tablet two</a></li>
+                                                        <li><a href="shop.html">tablet three</a></li>
+                                                        <li><a href="shop.html">tablet four</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Smartphone</li>
+                                                        <li><a href="shop.html">phone one</a></li>
+                                                        <li><a href="shop.html">phone two</a></li>
+                                                        <li><a href="shop.html">phone three</a></li>
+                                                        <li><a href="shop.html">phone four</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                            </ul>
+                                            <!-- Vertical Mega-Menu End -->
+                                        </li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\6.png" alt="menu-icon"></span>TV & Video<i class="fa fa-angle-right" aria-hidden="true"></i></a>
+                                            <!-- Vertical Mega-Menu Start -->
+                                            <ul class="ht-dropdown megamenu megamenu-two">
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Gaming Desktops</li>
+                                                        <li><a href="shop.html">Alpha Desktop</a></li>
+                                                        <li><a href="shop.html">rober Desktop</a></li>
+                                                        <li><a href="shop.html">Ultra Desktop </a></li>
+                                                        <li><a href="shop.html">beta desktop</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                                <!-- Single Column Start -->
+                                                <li class="single-megamenu">
+                                                    <ul>
+                                                        <li class="menu-tile">Women’s Fashion</li>
+                                                        <li><a href="shop.html">3D-Capable</a></li>
+                                                        <li><a href="shop.html">Clearance</a></li>
+                                                        <li><a href="shop.html">Free Shipping Eligible</a></li>
+                                                        <li><a href="shop.html">On Sale</a></li>
+                                                    </ul>
+                                                </li>
+                                                <!-- Single Column End -->
+                                            </ul>
+                                            <!-- Vertical Mega-Menu End -->
+                                        </li>
+                                         <li><a href="shop.html"><span><img src="img\vertical-menu\5.png" alt="menu-icon"></span>Beauty</a>
+                                        </li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\8.png" alt="menu-icon"></span>Fruits & Veggies</a></li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\9.png" alt="menu-icon"></span>Computer & Laptop</a></li>
+                                        <li><a href="shop.html"><span><img src="img\vertical-menu\10.png" alt="menu-icon"></span>Meat & Seafood</a></li>
+                                        <!-- More Categoies Start -->
+                                        <li id="cate-toggle" class="category-menu v-cat-menu">
+                                            <ul>
+                                                <li class="has-sub"><a href="#">More Categories</a>
+                                                    <ul class="category-sub">
+                                                        <li><a href="shop.html"><span><img src="img\vertical-menu\11.png" alt="menu-icon"></span>Accessories</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <!-- More Categoies End -->
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                        <!-- Vertical Menu End Here -->
+                    </div>
+                    <!-- Row End -->
+                </div>
+                <!-- Container End -->
+            </div>
+            <!-- Categorie Menu & Slider Area End Here -->
+
+        <!-- Product Thumbnail Start -->
+        <div class="main-product-thumbnail ptb-100 ptb-sm-60">
+            <div class="container">
+                <div class="thumb-bg">
+                    <div class="row">
+                        <!-- Main Thumbnail Image Start -->
+                        <div class="col-lg-5 mb-all-40">
+                            <!-- Thumbnail Large Image start -->
+                            <div class="tab-content">
+                                <div id="thumb1" class="tab-pane fade show active">
+                                    <a data-fancybox="images" th:href="${product.image}"><img th:src="${product.image}"
+                                                                                              alt="product-view"></a>
+                                </div>
+                            </div>
+                            <!-- Thumbnail Large Image End -->
+                        </div>
+                        <!-- Main Thumbnail Image End -->
+                        <!-- Thumbnail Description Start -->
+                        <div class="col-lg-7">
+                            <div class="thubnail-desc fix">
+                                <h3 class="product-header" th:text="${product.getName()}"></h3>
+                                <div class="rating-summary fix mtb-10">
+                                    <div class="rating">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star-o"></i>
+                                        <i class="fa fa-star-o"></i>
+                                    </div>
+                                </div>
+                                <div class="pro-price mtb-30">
+                                    <p class="d-flex align-items-center"><span class="price"
+                                                                               th:text="${product.getPrice()}"></span>₫</p>
+                                </div>
+                                <p class="mb-20 pro-desc-details">Type product: <span class="price"
+                                                                                      th:text="${product.getType()}"></span>
+                                </p>
+                                <p class="mb-20 pro-desc-details">Brand: <span class="price"
+                                                                               th:text="${product.getBrand()}"></span></p>
+
+                                <div class="box-quantity d-flex hot-product2">
+                                    <form action="#" th:action="@{/cart/add}">
+                                        <input id="quality" th:name="quality" class="quantity mr-15" type="number" min="1" th:max="${product.quality}"
+                                               value="1">
+                                        <input type="hidden" th:name="idProduct" th:value="${product.getId()}">
+                                        <input type="submit" class="btn btn-block" style="background-color: orangered" value="+ Add To Cart">
+
+                                    </form>
+                                </div>
+                                <div class="pro-ref mt-20">
+                                    <span th:switch="${product.getQuality()} <= 0">
+                                        <p th:case="false"><span class="in-stock"><i class="ion-checkmark-round"></i> IN STOCK</span></p>
+                                        <p th:case="true"><span class="out-stock"><i class="fa fa-close"></i> OUT STOCK</span></p>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Thumbnail Description End -->
+                    </div>
+                    <!-- Row End -->
+                </div>
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Product Thumbnail End -->
+
+        <!-- Product Thumbnail Description Start -->
+        <div class="thumnail-desc pb-100 pb-sm-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12">
+                        <ul class="main-thumb-desc nav tabs-area" role="tablist">
+                            <li><a class="active" data-toggle="tab" href="#dtail">Product Details</a></li>
+                        </ul>
+                        <!-- Product Thumbnail Tab Content Start -->
+                        <div class="tab-content thumb-content border-default">
+                            <div id="dtail" class="tab-pane fade show active">
+                                <p th:text="${product.getDetail()}"></p>
+                            </div>
+                        </div>
+                        <!-- Product Thumbnail Tab Content End -->
+                    </div>
+                </div>
+                <!-- Row End -->
+            </div>
+            <!-- Container End -->
+        </div>
+        <!-- Product Thumbnail Description End -->
+
+
+        <!-- Footer Area Start Here -->
+        <footer th:replace="~{shop::footer}"></footer>
+        <!-- Footer Area End Here -->
+
+</div>
+<!-- Main Wrapper End Here -->
+
+<!-- jquery 3.2.1 -->
+<script src="js\vendor\jquery-3.2.1.min.js"></script>
+<!-- Countdown js -->
+<script src="js\jquery.countdown.min.js"></script>
+<!-- Mobile menu js -->
+<script src="js\jquery.meanmenu.min.js"></script>
+<!-- ScrollUp js -->
+<script src="js\jquery.scrollUp.js"></script>
+<!-- Nivo slider js -->
+<script src="js\jquery.nivo.slider.js"></script>
+<!-- Fancybox js -->
+<script src="js\jquery.fancybox.min.js"></script>
+<!-- Jquery nice select js -->
+<script src="js\jquery.nice-select.min.js"></script>
+<!-- Jquery ui price slider js -->
+<script src="js\jquery-ui.min.js"></script>
+<!-- Owl carousel -->
+<script src="js\owl.carousel.min.js"></script>
+<!-- Bootstrap popper js -->
+<script src="js\popper.min.js"></script>
+<!-- Bootstrap js -->
+<script src="js\bootstrap.min.js"></script>
+<!-- Plugin js -->
+<script src="js\plugins.js"></script>
+<!-- Main activaion js -->
+<script src="js\main.js"></script>
+</body>
+
+</html>

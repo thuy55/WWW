@@ -1,0 +1,157 @@
+﻿<!doctype  html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" class="no-js" lang="zxx" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Cart</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Favicons -->
+    <link rel="shortcut icon" th:href="@{/img/favicon.ico}">
+    <link rel="stylesheet" th:href="@{/css/font-awesome.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/ionicons.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/linearicons.css}" />
+    <link rel="stylesheet" th:href="@{/css/nice-select.css}" />
+    <link rel="stylesheet" th:href="@{/css/jquery.fancybox.css}" />
+    <link rel="stylesheet" th:href="@{/css/meanmenu.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/nivo-slider.css}" />
+
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}" />
+    <link rel="stylesheet" th:href="@{/css/default.css}" />
+    <link rel="stylesheet" th:href="@{/css/style.css}" />
+    <link rel="stylesheet" th:href="@{/css/responsive.css}" />
+
+
+    <!-- Modernizer js -->
+    <script th:src="@{/js/vendor/modernizr-3.5.0.min.js}"></script>
+</head>
+
+<body>
+    <!--[if lte IE 9]>
+        <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <![endif]-->
+
+    <!-- Main Wrapper Start Here -->
+    <div class="wrapper">
+
+        <!-- Main Header Area Start Here -->
+        <header th:replace="~{shop::header}"></header>
+        <!-- Main Header Area End Here -->
+
+        <!-- Cart Main Area Start -->
+        <div class="cart-main-area ptb-100 ptb-sm-60">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 col-sm-12">
+                        <!-- Form Start -->
+                        <form action="#">
+                            <!-- Table Content Start -->
+                            <div class="table-content table-responsive mb-45">
+                                <table>
+                                    <thead>
+                                        <tr>
+                                            <th class="product-thumbnail">Image</th>
+                                            <th class="product-name">Product</th>
+                                            <th class="product-price">Price</th>
+                                            <th class="product-quantity">Quantity</th>
+                                            <th class="product-subtotal">Total</th>
+                                            <th class="product-remove">Remove</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                    <th:block th:each="item : ${order.orderDetails}">
+                                        <tr>
+                                            <td class="product-thumbnail">
+                                                <a href="#"><img th:src="${item.product.image}" alt="cart-image"></a>
+                                            </td>
+                                            <td class="product-name"><span th:text="${item.product.name}"></span></td>
+                                            <td class="product-price"><span th:text="${item.product.price}"></span></td>
+                                            <td class="product-quantity"><input th:onchange="'window.location.href = \'' + @{/cart/update(idDetail=${item.id})} + '&quality=\' + this.value '" type="number" min="1" th:max="${item.product.quality}" th:value="${item.quality}"></td>
+                                            <td class="product-subtotal" th:text="${item.quality}*${item.product.price}"></td>
+                                            <td class="product-remove"> <a th:href="@{/cart/remove(idDetail=${item.getId()})}"><i class="fa fa-times" aria-hidden="true"></i></a></td>
+                                        </tr>
+                                    </th:block>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <!-- Table Content Start -->
+                            <div class="row">
+                               <!-- Cart Button Start -->
+                                <div class="col-md-8 col-sm-12">
+                                    <div class="buttons-cart">
+<!--                                        <input type="submit" value="Update Cart">-->
+                                        <a th:href="@{/home}">Continue Shopping</a>
+                                    </div>
+                                </div>
+                                <!-- Cart Button Start -->
+                                <!-- Cart Totals Start -->
+                                <div class="col-md-4 col-sm-12">
+                                    <div class="cart_totals float-md-right text-md-right">
+                                        <h2>Cart Totals</h2>
+                                        <br>
+                                        <table class="float-md-right">
+                                            <tbody>
+                                                <tr class="order-total">
+                                                    <th>Total</th>
+                                                    <td>
+                                                        <strong><span class="amount" th:text="${order.total}"></span></strong>
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <div class="wc-proceed-to-checkout">
+                                            <a th:href="@{/cart/checkout(idOrder=${order.id})}">Proceed to Checkout</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Cart Totals End -->
+                            </div>
+                            <!-- Row End -->
+                        </form>
+                        <!-- Form End -->
+                    </div>
+                </div>
+                 <!-- Row End -->
+            </div>
+        </div>
+        <!-- Cart Main Area End -->
+
+        <!-- Footer Area Start Here -->
+        <footer th:replace="~{shop::footer}"></footer>
+        <!-- Footer Area End Here -->
+
+    </div>
+    <!-- Main Wrapper End Here -->
+
+    <!-- jquery 3.2.1 -->
+    <script src="js\vendor\jquery-3.2.1.min.js"></script>
+    <!-- Countdown js -->
+    <script src="js\jquery.countdown.min.js"></script>
+    <!-- Mobile menu js -->
+    <script src="js\jquery.meanmenu.min.js"></script>
+    <!-- ScrollUp js -->
+    <script src="js\jquery.scrollUp.js"></script>
+    <!-- Nivo slider js -->
+    <script src="js\jquery.nivo.slider.js"></script>
+    <!-- Fancybox js -->
+    <script src="js\jquery.fancybox.min.js"></script>
+    <!-- Jquery nice select js -->
+    <script src="js\jquery.nice-select.min.js"></script>
+    <!-- Jquery ui price slider js -->
+    <script src="js\jquery-ui.min.js"></script>
+    <!-- Owl carousel -->
+    <script src="js\owl.carousel.min.js"></script>
+    <!-- Bootstrap popper js -->
+    <script src="js\popper.min.js"></script>
+    <!-- Bootstrap js -->
+    <script src="js\bootstrap.min.js"></script>
+    <!-- Plugin js -->
+    <script src="js\plugins.js"></script>
+    <!-- Main activaion js -->
+    <script src="js\main.js"></script>
+</body>
+
+</html>
